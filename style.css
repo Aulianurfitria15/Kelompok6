@@ -1,0 +1,297 @@
+:root {
+    --primary-color: #6b8e6e; /* Hijau tua */
+    --secondary-color: #c4d4c1; /* Hijau muda */
+    --text-dark: #2f4f4f;
+    --text-light: #666;
+    --bg-light: #f9f9f6;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--text-dark) !important;
+}
+
+.nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2847, 79, 79, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.btn-cart {
+    background-color: transparent;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    position: relative;
+    margin-left: 10px;
+}
+
+.btn-cart .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.7rem;
+    padding: 0.3em 0.6em;
+    border-radius: 50%;
+    background-color: #dc3545; /* Red for cart count */
+    color: white;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+    background-color: #eef4ec; /* Fallback color */
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* Darken image for better text contrast */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 15px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-form .form-control {
+    border-radius: 50px;
+    padding: 12px 20px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.2);
+    color: var(--white);
+}
+
+.hero-form .form-control::placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+.hero-form .btn-subscribe {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-form .btn-subscribe:hover {
+    background-color: #557a68;
+}
+
+/* Category Buttons */
+.category-buttons {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.category-buttons .btn {
+    margin: 5px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--white);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.category-buttons .btn.active,
+.category-buttons .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Menu Section */
+.menu-section {
+    padding-bottom: 60px;
+}
+
+.menu-section h2 { /* Added for consistent styling of h2 in menu section */
+    color: var(--text-dark);
+}
+
+.menu-container {
+    padding: 0 15px;
+}
+
+.menu-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure cards are same height */
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 200px; /* Fixed image height */
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-info {
+    padding: 18px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-info h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.menu-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    height: 60px; /* Fixed height for description */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+.menu-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.btn-add-to-cart {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #557a68;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+
+footer h5 {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* Toast Styling */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+}
