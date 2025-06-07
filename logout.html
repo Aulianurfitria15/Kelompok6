@@ -4,11 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FoodOrder - Jualan Makanan Online</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Login/Logout Status Bar -->
+    <div id="authStatusBar" class="bg-primary text-white py-2 text-center d-none">
+        <div class="container">
+            <span id="welcomeMessage"></span>
+            <button id="logoutBtn" class="btn btn-sm btn-outline-light ms-3">
+                <i class="fas fa-sign-out-alt me-1"></i>Logout
+            </button>
+        </div>
+    </div>
+
+    <div id="guestStatusBar" class="bg-warning text-dark py-2 text-center">
+        <div class="container">
+            <span><i class="fas fa-info-circle me-2"></i>Anda sedang dalam mode tamu. <a href="login.html" class="text-dark fw-bold">Login</a> untuk dapat memesan makanan.</span>
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">FoodOrder</a>
@@ -16,7 +35,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#hero">Home</a>
                     </li>
@@ -27,15 +46,17 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kategori
                         </a>
+                        
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#" data-filter=".makanan-berat">Makanan Berat</a></li>
                             <li><a class="dropdown-item" href="#" data-filter=".makanan-ringan">Makanan Ringan</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ms-lg-3">
-                        <a href="login.html" class="btn btn-primary px-3 py-2" style="color:white;">
-                            <i class="fas fa-sign-in-alt me-1"></i> Login / Kelola Data
-                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login">Login</a>
+                    </li>
+                    <li class="nav-item" id="adminMenuNav" style="display: none;">
+                        <a class="nav-link" href="#admin">Kelola Data</a>
                     </li>
                 </ul>
             </div>
@@ -57,9 +78,9 @@
     <div class="category-buttons" id="category-filter">
         <div class="container">
             <button class="btn active" data-filter="*">Semua Menu</button>
-            <button id="1"  class="btn" data-filter=".makanan-berat">Makanan Berat</button>
+            <button id="1" class="btn" data-filter=".makanan-berat">Makanan Berat</button>
             <button class="btn" data-filter=".makanan-ringan">Makanan Ringan</button>
-            </div>
+        </div>
     </div>
 
     <section class="menu-section" id="menu">
@@ -76,7 +97,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="menu-price">Rp25.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Nasi Goreng Special">
+                                <button class="btn btn-add-to-cart" data-item="Nasi Goreng Special" data-price="25000">
                                     <i class="fas fa-cart-plus"></i> Pesan Sekarang
                                 </button>
                             </div>
@@ -94,7 +115,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="menu-price">Rp30.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Sate Ayam Madura">
+                                <button class="btn btn-add-to-cart" data-item="Sate Ayam Madura" data-price="30000">
                                     <i class="fas fa-cart-plus"></i> Pesan Sekarang
                                 </button>
                             </div>
@@ -112,7 +133,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="menu-price">Rp15.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Es Krim Coklat Delight">
+                                <button class="btn btn-add-to-cart" data-item="Es Krim Coklat Delight" data-price="15000">
                                     <i class="fas fa-cart-plus"></i> Pesan Sekarang
                                 </button>
                             </div>
@@ -122,7 +143,7 @@
 
                 <div class="col element-item makanan-ringan" id="menu">
                     <div class="menu-card">
-                        <img src="kentang.jpg" alt="Es Krim Coklat">
+                        <img src="kentang.jpg" alt="Kentang Goreng">
                         <div class="menu-info">
                             <div>
                                 <h3>Kentang Goreng</h3>
@@ -130,7 +151,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="menu-price">Rp20.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Kentang Goreng">
+                                <button class="btn btn-add-to-cart" data-item="Kentang Goreng" data-price="20000">
                                     <i class="fas fa-cart-plus"></i> Pesan Sekarang
                                 </button>
                             </div>
@@ -140,7 +161,7 @@
 
                 <div class="col element-item makanan-ringan" id="menu">
                     <div class="menu-card">
-                        <img src="martabak.jpg" alt="Es Krim Coklat">
+                        <img src="martabak.jpg" alt="Martabak Asin">
                         <div class="menu-info">
                             <div>
                                 <h3>Martabak Asin</h3>
@@ -148,15 +169,13 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="menu-price">Rp25.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Martabak Asin">
+                                <button class="btn btn-add-to-cart" data-item="Martabak Asin" data-price="25000">
                                     <i class="fas fa-cart-plus"></i> Pesan Sekarang
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
 
                 <div class="col element-item makanan-berat" id="menu">
                     <div class="menu-card">
@@ -168,7 +187,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="menu-price">Rp20.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Soto Ayam Lamongan">
+                                <button class="btn btn-add-to-cart" data-item="Soto Ayam Lamongan" data-price="20000">
                                     <i class="fas fa-cart-plus"></i> Pesan Sekarang
                                 </button>
                             </div>
@@ -186,7 +205,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="menu-price">Rp22.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Mie Ayam Bakso">
+                                <button class="btn btn-add-to-cart" data-item="Mie Ayam Bakso" data-price="22000">
                                     <i class="fas fa-cart-plus"></i> Pesan Sekarang
                                 </button>
                             </div>
@@ -204,14 +223,68 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="menu-price">Rp18.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Salad Buah Segar">
+                                <button class="btn btn-add-to-cart" data-item="Salad Buah Segar" data-price="18000">
                                     <i class="fas fa-cart-plus"></i> Pesan Sekarang
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Admin Section (only visible for admin users) -->
+    <section class="admin-section d-none" id="admin">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Kelola Data Menu</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-plus-circle me-2"></i>Tambah Menu Baru</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="addMenuForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Nama Menu</label>
+                                    <input type="text" class="form-control" id="menuName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Deskripsi</label>
+                                    <textarea class="form-control" id="menuDesc" rows="3" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Harga</label>
+                                    <input type="number" class="form-control" id="menuPrice" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Kategori</label>
+                                    <select class="form-control" id="menuCategory" required>
+                                        <option value="">Pilih Kategori</option>
+                                        <option value="makanan-berat">Makanan Berat</option>
+                                        <option value="makanan-ringan">Makanan Ringan</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus me-2"></i>Tambah Menu
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-list me-2"></i>Daftar Pesanan</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="ordersList">
+                                <p class="text-muted">Belum ada pesanan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -251,6 +324,7 @@
         </div>
     </footer>
 
+    <!-- Subscribe Modal -->
     <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -268,256 +342,39 @@
         </div>
     </div>
 
-    <!-- Modal Pesan Berhasil (Pesanan) -->
-<!-- Hanya render jika sudah login -->
-<script>
-function isLoggedIn() {
-    if (window.currentUser) return true;
-    if (localStorage.getItem('currentUser')) return true;
-    if (sessionStorage.getItem('currentUser')) return true;
-    if (window.location.search.includes('logged=true')) return true;
-    return false;
-}
-</script>
-<div id="orderSuccessModalContainer"></div>
-<script>
-// Jangan render modal sukses di awal, hanya render saat submit orderQtyForm
-</script>
-    
-<!-- Modal Login Dulu -->
-<div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-labelledby="loginRequiredModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-warning text-dark">
-        <h5 class="modal-title" id="loginRequiredModalLabel"><i class="fas fa-sign-in-alt me-2"></i>Login Diperlukan</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-      </div>
-      <div class="modal-body text-center">
-        <p>Anda harus login terlebih dahulu untuk memesan makanan.</p>
-        <a href="login.html" class="btn btn-primary mt-2"><i class="fas fa-sign-in-alt me-1"></i>Login Sekarang</a>
-      </div>
+    <!-- Order Success Modal -->
+    <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="orderSuccessModalLabel"><i class="fas fa-check-circle me-2"></i>Pesanan Berhasil!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div style="font-size:2.5rem;color:#28a745;">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="mt-3 mb-2">
+                        <span id="orderedMenuName" class="fw-bold"></span>
+                    </div>
+                    <div class="mb-3">
+                        Terima kasih telah memesan di <b>FoodOrder</b>! Pesanan Anda akan segera kami proses dan dikirim ke alamat tujuan.
+                    </div>
+                    <div class="alert alert-info py-2">
+                        Silakan cek keranjang atau hubungi admin jika ada kendala.
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-    <!-- Modal Input Jumlah Pesanan (dengan tombol tambah/kurang) -->
-<div class="modal fade" id="orderQtyModal" tabindex="-1" aria-labelledby="orderQtyModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <form id="orderQtyForm">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="orderQtyModalLabel"><i class="fas fa-cart-plus me-2"></i>Jumlah Pesanan</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-2 fw-bold" id="qtyMenuName"></div>
-          <div class="mb-3 d-flex align-items-center justify-content-center" style="gap:10px;">
-            <label for="qtyInput" class="form-label mb-0 me-2">Jumlah:</label>
-            <button type="button" class="btn btn-outline-secondary btn-sm" id="btnQtyMinus"><i class="fas fa-minus"></i></button>
-            <input type="number" class="form-control text-center" id="qtyInput" name="qtyInput" value="1" min="1" style="width:70px;display:inline-block;">
-            <button type="button" class="btn btn-outline-secondary btn-sm" id="btnQtyPlus"><i class="fas fa-plus"></i></button>
-          </div>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <button type="submit" class="btn btn-primary">Pesan</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-
-    <script src="script.js"></script>
-
-    <script>
-document.querySelectorAll('.btn-add-to-cart').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Ambil nama menu dari atribut data-item
-        var menuName = this.getAttribute('data-item') || 'Menu';
-        document.getElementById('orderedMenuName').textContent = 'Anda memesan: ' + menuName;
-        var modal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
-        modal.show();
-    });
-});
-
-// Script untuk filter menu dari dropdown navbar
-document.querySelectorAll('.dropdown-item[data-filter]').forEach(function(item) {
-    item.addEventListener('click', function(e) {
-        e.preventDefault();
-        var filterValue = this.getAttribute('data-filter');
-        // Pastikan Isotope sudah diinisialisasi
-        if (window.iso) {
-            window.iso.arrange({ filter: filterValue });
-            setTimeout(function() {
-                // Scroll ke item pertama yang tampil setelah filter
-                var firstVisible = document.querySelector('.element-item' + filterValue + '[style*="display: block"], .element-item' + filterValue + ':not([style])');
-                if (firstVisible) {
-                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
-                }
-            }, 300);
-        }
-        // Update tombol kategori aktif
-        document.querySelectorAll('.category-buttons .btn').forEach(function(btn) {
-            btn.classList.remove('active');
-        });
-        var matchingButton = document.querySelector('.category-buttons .btn[data-filter="' + filterValue + '"]');
-        if (matchingButton) {
-            matchingButton.classList.add('active');
-        }
-    });
-});
-
-// Script untuk tombol navbar "Menu" agar filter ke Semua Menu
-document.querySelectorAll('.navbar .nav-link[href="#menu"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-        // Reset filter ke Semua Menu
-        if (window.iso) {
-            window.iso.arrange({ filter: '*' });
-        }
-        // Set tombol kategori "Semua Menu" aktif
-        document.querySelectorAll('.category-buttons .btn').forEach(function(btn) {
-            btn.classList.remove('active');
-        });
-        var allBtn = document.querySelector('.category-buttons .btn[data-filter="*"]');
-        if (allBtn) {
-            allBtn.classList.add('active');
-        }
-        // Scroll ke section menu
-        var menuSection = document.getElementById('menu');
-        if (menuSection) {
-            menuSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
-// Script agar klik navbar "Menu" sama dengan klik tombol "Semua Menu"
-document.querySelectorAll('.navbar .nav-link[href="#menu"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-        // Cegah scroll default agar smooth scroll dari tombol
-        e.preventDefault();
-        var allBtn = document.querySelector('.category-buttons .btn[data-filter="*"]');
-        if (allBtn) {
-            allBtn.click();
-        }
-        // Scroll ke section menu (jaga-jaga jika filter tidak scroll)
-        var menuSection = document.getElementById('menu');
-        if (menuSection) {
-            menuSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
-// Cek status login dari localStorage/sessionStorage atau query string
-function isLoggedIn() {
-    if (window.currentUser) return true;
-    if (localStorage.getItem('currentUser')) return true;
-    if (sessionStorage.getItem('currentUser')) return true;
-    if (window.location.search.includes('logged=true')) return true;
-    return false;
-}
-
-let selectedMenuName = '';
-
-// Handler tombol "Pesan Sekarang"
-document.querySelectorAll('.btn-add-to-cart').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (!isLoggedIn()) {
-            // Tampilkan modal login dulu
-            var loginModal = new bootstrap.Modal(document.getElementById('loginRequiredModal'));
-            loginModal.show();
-            return;
-        }
-        // Jika sudah login, tampilkan modal input jumlah pesanan
-        selectedMenuName = this.getAttribute('data-item') || 'Menu';
-        document.getElementById('qtyMenuName').textContent = selectedMenuName;
-        document.getElementById('qtyInput').value = 1;
-        var qtyModal = new bootstrap.Modal(document.getElementById('orderQtyModal'));
-        qtyModal.show();
-
-        // Reset and setup plus/minus handler every time modal is shown
-        setTimeout(function() {
-            var qtyInput = document.getElementById('qtyInput');
-            var btnMinus = document.getElementById('btnQtyMinus');
-            var btnPlus = document.getElementById('btnQtyPlus');
-            if (btnMinus && btnPlus && qtyInput) {
-                btnMinus.onclick = function() {
-                    let val = parseInt(qtyInput.value, 10) || 1;
-                    if (val > 1) qtyInput.value = val - 1;
-                };
-                btnPlus.onclick = function() {
-                    let val = parseInt(qtyInput.value, 10) || 1;
-                    qtyInput.value = val + 1;
-                };
-            }
-        }, 200);
-    });
-});
-
-// Handler submit jumlah pesanan
-document.getElementById('orderQtyForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (!isLoggedIn()) return;
-    var qty = document.getElementById('qtyInput').value;
-    var qtyModalEl = document.getElementById('orderQtyModal');
-    var qtyModal = bootstrap.Modal.getInstance(qtyModalEl);
-    qtyModal.hide();
-
-    qtyModalEl.addEventListener('hidden.bs.modal', function handler() {
-        // Render modal sukses ke dalam container
-        document.getElementById('orderSuccessModalContainer').innerHTML = `
-<div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-success text-white">
-        <h5 class="modal-title" id="orderSuccessModalLabel"><i class="fas fa-check-circle me-2"></i>Pesanan Berhasil!</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
-      </div>
-      <div class="modal-body text-center">
-        <div style="font-size:2.5rem;color:#28a745;">
-          <i class="fas fa-utensils"></i>
-        </div>
-        <div class="mt-3 mb-2">
-          <span id="successMenuName" class="fw-bold"></span>
-        </div>
-        <div class="mb-2">
-          <span id="successMenuQty"></span>
-        </div>
-        <div class="mb-3">
-          Terima kasih telah memesan di <b>FoodOrder</b>! Pesanan Anda akan segera kami proses dan dikirim ke alamat tujuan.
-        </div>
-        <div class="alert alert-info py-2">
-          Silakan cek keranjang atau hubungi admin jika ada kendala.
-        </div>
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
-</div>
-        `;
-        document.getElementById('successMenuName').textContent = 'Anda memesan: ' + selectedMenuName;
-        document.getElementById('successMenuQty').textContent = 'Jumlah: ' + qty;
-        var successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
-        successModal.show();
-        qtyModalEl.removeEventListener('hidden.bs.modal', handler);
-    });
-});
-
-// Hapus modal sukses dari HTML jika user belum login
-if (!isLoggedIn()) {
-    var orderSuccessModal = document.getElementById('orderSuccessModal');
-    if (orderSuccessModal) {
-        orderSuccessModal.parentNode.removeChild(orderSuccessModal);
-    }
-}
-    </script>
-</body>
-</html>
+    <!-- Login Required Modal -->
+    <div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-labelledby="loginRequiredModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title" id="loginRequiredModalLabel"><i class="fas fa-exclamation-triangle me-2"></i>Login Diperlukan</h5>
+                    <button type="button" class="btn-close" data-bs

@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+actor User 
+
+
+rectangle "FoodOrder System" {
+  User -- (Lihat Menu)
+  User -- (Filter Menu)
+  User -- (Pesan Makanan)
+  User -- (Masukkan Jumlah Pesanan)
+  User -- (Lihat Promo)
+  User -- (Langganan Email)
+  User -- (Lihat Keranjang)
+  User -- (Checkout)
+
+}
+
+(Lihat Menu) <|-- (Filter Menu)
+(Pesan Makanan) <|-- (Masukkan Jumlah Pesanan)
+@enduml
