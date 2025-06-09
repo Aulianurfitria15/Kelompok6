@@ -52,9 +52,6 @@
                             <li><a class="dropdown-item" href="#" data-filter=".makanan-ringan">Makanan Ringan</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#login">Login</a>
-                    </li>
                     <li class="nav-item" id="adminMenuNav" style="display: none;">
                         <a class="nav-link" href="#admin">Kelola Data</a>
                     </li>
@@ -371,10 +368,69 @@
         </div>
     </div>
 
-    <!-- Login Required Modal -->
+       <!-- Login Required Modal -->
     <div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-labelledby="loginRequiredModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
-                    <h5 class="modal-title" id="loginRequiredModalLabel"><i class="fas fa-exclamation-triangle me-2"></i>Login Diperlukan</h5>
-                    <button type="button" class="btn-close" data-bs
+                    <h5 class="modal-title" id="loginRequiredModalLabel">
+                        <i class="fas fa-exclamation-triangle me-2"></i>Login Diperlukan
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Anda harus login terlebih dahulu untuk mengakses fitur ini.</p>
+                    <a href="login.html" class="btn btn-primary mt-2">
+                        <i class="fas fa-sign-in-alt me-1"></i>Login Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script login/logout/admin validation -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const userString = localStorage.getItem('currentUser');
+        let user = null;
+        try {
+            user = JSON.parse(userString);
+        } catch (e) {
+            user = null;
+        }
+
+        const adminSection = document.querySelector('.admin-section');
+        const authBar = document.getElementById('authStatusBar');
+        const guestBar = document.getElementById('guestStatusBar');
+        const welcomeMsg = document.getElementById('welcomeMessage');
+        const adminNav = document.getElementById('adminMenuNav');
+
+        if (user && user.role) {
+            if (user.role.toLowerCase() === 'admin') {
+                if (adminSection) adminSection.classList.remove('d-none');
+                if (adminNav) adminNav.style.display = 'block';
+            } else {
+                // Non-admin login, tetap sembunyikan admin
+                if (adminSection) adminSection.classList.add('d-none');
+                if (adminNav) adminNav.style.display = 'none';
+            }
+
+            if (guestBar) guestBar.classList.add('d-none');
+            if (authBar) authBar.classList.remove('d-none');
+            if (welcomeMsg) welcomeMsg.textContent = `Selamat datang, ${user.username}`;
+        }
+
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function () {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            });
+        }
+    });
+    </script>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

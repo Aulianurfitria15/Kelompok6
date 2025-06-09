@@ -32,11 +32,8 @@
                             <li><a class="dropdown-item" href="#" data-filter=".makanan-ringan">Makanan Ringan</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ms-lg-3">
-                        <a href="login.html" class="btn btn-primary px-3 py-2" style="color:white;">
-                            <i class="fas fa-sign-in-alt me-1"></i> Login / Kelola Data
-                        </a>
-                    </li>
+                    <li class="nav-item ms-lg-3" id="navAuthContent">
+                        </li>
                 </ul>
             </div>
         </div>
@@ -57,161 +54,15 @@
     <div class="category-buttons" id="category-filter">
         <div class="container">
             <button class="btn active" data-filter="*">Semua Menu</button>
-            <button id="1"  class="btn" data-filter=".makanan-berat">Makanan Berat</button>
+            <button class="btn" data-filter=".makanan-berat">Makanan Berat</button>
             <button class="btn" data-filter=".makanan-ringan">Makanan Ringan</button>
-            </div>
+        </div>
     </div>
 
     <section class="menu-section" id="menu">
         <div class="container">
             <h2 class="text-center mb-5 fw-bold">Pilihan Menu Kami</h2>
             <div id="menuContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <div class="col element-item makanan-berat">
-                    <div class="menu-card">
-                        <img src="nasgor.jpg" alt="Nasi Goreng">
-                        <div class="menu-info">
-                            <div>
-                                <h3>Nasi Goreng Special</h3>
-                                <p>Nasi goreng dengan topping ayam, telur, dan kerupuk, cocok untuk makan siang yang mengenyangkan.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="menu-price">Rp25.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Nasi Goreng Special">
-                                    <i class="fas fa-cart-plus"></i> Pesan Sekarang
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col element-item makanan-berat" id="menu">
-                    <div class="menu-card">
-                        <img src="sate.jpg" alt="Sate Ayam">
-                        <div class="menu-info">
-                            <div>
-                                <h3>Sate Ayam Madura</h3>
-                                <p>10 tusuk sate ayam empuk dengan bumbu kacang khas Madura yang kaya rasa.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="menu-price">Rp30.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Sate Ayam Madura">
-                                    <i class="fas fa-cart-plus"></i> Pesan Sekarang
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col element-item makanan-ringan" id="menu">
-                    <div class="menu-card">
-                        <img src="eskrim.jpg" alt="Es Krim Coklat">
-                        <div class="menu-info">
-                            <div>
-                                <h3>Es Krim Coklat Delight</h3>
-                                <p>Es krim lembut rasa coklat premium, lumer di mulut, manisnya pas buat pencuci mulut.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="menu-price">Rp15.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Es Krim Coklat Delight">
-                                    <i class="fas fa-cart-plus"></i> Pesan Sekarang
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col element-item makanan-ringan" id="menu">
-                    <div class="menu-card">
-                        <img src="kentang.jpg" alt="Es Krim Coklat">
-                        <div class="menu-info">
-                            <div>
-                                <h3>Kentang Goreng</h3>
-                                <p>Kentang goreng nikmat dengan taburan seasoning khas</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="menu-price">Rp20.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Kentang Goreng">
-                                    <i class="fas fa-cart-plus"></i> Pesan Sekarang
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col element-item makanan-ringan" id="menu">
-                    <div class="menu-card">
-                        <img src="martabak.jpg" alt="Es Krim Coklat">
-                        <div class="menu-info">
-                            <div>
-                                <h3>Martabak Asin</h3>
-                                <p>Martabak telur dengan campuran daun bawang dan juga telur bebek</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="menu-price">Rp25.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Martabak Asin">
-                                    <i class="fas fa-cart-plus"></i> Pesan Sekarang
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col element-item makanan-berat" id="menu">
-                    <div class="menu-card">
-                        <img src="soto.jpg" alt="Soto Ayam">
-                        <div class="menu-info">
-                            <div>
-                                <h3>Soto Ayam</h3>
-                                <p>Soto ayam dengan kuah kuning gurih, koya, dan irisan ayam, hangat dan nikmat.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="menu-price">Rp20.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Soto Ayam Lamongan">
-                                    <i class="fas fa-cart-plus"></i> Pesan Sekarang
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col element-item makanan-berat" id="menu">
-                    <div class="menu-card">
-                        <img src="mieayam.jpg" alt="Mie Ayam">
-                        <div class="menu-info">
-                            <div>
-                                <h3>Mie Ayam Pangsit</h3>
-                                <p>Mie kenyal dengan ayam cincang gurih dan pangsit goreng, favorit semua orang.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="menu-price">Rp22.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Mie Ayam Bakso">
-                                    <i class="fas fa-cart-plus"></i> Pesan Sekarang
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col element-item makanan-ringan" id="menu">
-                    <div class="menu-card">
-                        <img src="salad.jpg" alt="Salad Buah">
-                        <div class="menu-info">
-                            <div>
-                                <h3>Salad Buah Segar</h3>
-                                <p>Potongan buah-buahan segar dengan saus yoghurt manis, ringan dan sehat.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-auto">
-                                <span class="menu-price">Rp18.000</span>
-                                <button class="btn btn-add-to-cart" data-item="Salad Buah Segar">
-                                    <i class="fas fa-cart-plus"></i> Pesan Sekarang
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -225,7 +76,6 @@
                         FoodOrder adalah solusi terbaik untuk memesan makanan favorit Anda secara online. Cepat, mudah, dan lezat!
                     </p>
                 </div>
-
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">Tautan Cepat</h5>
                     <ul class="list-unstyled mb-0">
@@ -233,7 +83,6 @@
                         <li><a href="#menu" class="text-white">Menu</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">Ikuti Kami</h5>
                     <div class="social-icons">
@@ -245,207 +94,177 @@
                 </div>
             </div>
         </div>
-
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © <span id="currentYear"></span> FoodOrder. All Rights Reserved. Dikelola oleh Kelompok 6.
         </div>
     </footer>
 
     <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        </div>
+    <div id="orderSuccessModalContainer"></div>
+    <div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-labelledby="loginRequiredModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="subscribeModalLabel">Terima Kasih Telah Berlangganan!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title" id="loginRequiredModalLabel"><i class="fas fa-sign-in-alt me-2"></i>Login Diperlukan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                 </div>
-                <div class="modal-body">
-                    Anda akan menerima pembaruan, promo, dan penawaran eksklusif langsung ke email Anda.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <div class="modal-body text-center">
+                    <p>Anda harus login terlebih dahulu untuk memesan makanan.</p>
+                    <a href="login.html" class="btn btn-primary mt-2"><i class="fas fa-sign-in-alt me-1"></i>Login Sekarang</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Modal Pesan Berhasil (Pesanan) -->
-<!-- Hanya render jika sudah login -->
-<script>
-function isLoggedIn() {
-    if (window.currentUser) return true;
-    if (localStorage.getItem('currentUser')) return true;
-    if (sessionStorage.getItem('currentUser')) return true;
-    if (window.location.search.includes('logged=true')) return true;
-    return false;
-}
-</script>
-<div id="orderSuccessModalContainer"></div>
-<script>
-// Jangan render modal sukses di awal, hanya render saat submit orderQtyForm
-</script>
-    
-<!-- Modal Login Dulu -->
-<div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-labelledby="loginRequiredModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-warning text-dark">
-        <h5 class="modal-title" id="loginRequiredModalLabel"><i class="fas fa-sign-in-alt me-2"></i>Login Diperlukan</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-      </div>
-      <div class="modal-body text-center">
-        <p>Anda harus login terlebih dahulu untuk memesan makanan.</p>
-        <a href="login.html" class="btn btn-primary mt-2"><i class="fas fa-sign-in-alt me-1"></i>Login Sekarang</a>
-      </div>
+    <div class="modal fade" id="orderQtyModal" tabindex="-1" aria-labelledby="orderQtyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form id="orderQtyForm">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="orderQtyModalLabel"><i class="fas fa-cart-plus me-2"></i>Jumlah Pesanan</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-2 fw-bold" id="qtyMenuName"></div>
+                        <div class="mb-3 d-flex align-items-center justify-content-center" style="gap:10px;">
+                            <label for="qtyInput" class="form-label mb-0 me-2">Jumlah:</label>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="btnQtyMinus"><i class="fas fa-minus"></i></button>
+                            <input type="number" class="form-control text-center" id="qtyInput" name="qtyInput" value="1" min="1" style="width:70px;display:inline-block;">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="btnQtyPlus"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-primary">Pesan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-
-    <!-- Modal Input Jumlah Pesanan (dengan tombol tambah/kurang) -->
-<div class="modal fade" id="orderQtyModal" tabindex="-1" aria-labelledby="orderQtyModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <form id="orderQtyForm">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="orderQtyModalLabel"><i class="fas fa-cart-plus me-2"></i>Jumlah Pesanan</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-2 fw-bold" id="qtyMenuName"></div>
-          <div class="mb-3 d-flex align-items-center justify-content-center" style="gap:10px;">
-            <label for="qtyInput" class="form-label mb-0 me-2">Jumlah:</label>
-            <button type="button" class="btn btn-outline-secondary btn-sm" id="btnQtyMinus"><i class="fas fa-minus"></i></button>
-            <input type="number" class="form-control text-center" id="qtyInput" name="qtyInput" value="1" min="1" style="width:70px;display:inline-block;">
-            <button type="button" class="btn btn-outline-secondary btn-sm" id="btnQtyPlus"><i class="fas fa-plus"></i></button>
-          </div>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <button type="submit" class="btn btn-primary">Pesan</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-
+    
+    <script src="menu-data.js"></script>
     <script src="script.js"></script>
 
     <script>
-document.querySelectorAll('.btn-add-to-cart').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Ambil nama menu dari atribut data-item
-        var menuName = this.getAttribute('data-item') || 'Menu';
-        document.getElementById('orderedMenuName').textContent = 'Anda memesan: ' + menuName;
-        var modal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
-        modal.show();
-    });
+        let selectedMenuName = '';
+
+        // Cek status login dari localStorage/sessionStorage atau query string
+        function isLoggedIn() {
+            return !!localStorage.getItem('currentUser');
+        }
+        
+        // Fungsi untuk logout
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.reload();
+        }
+
+        // Fungsi untuk merender kartu menu secara dinamis
+        function renderMenuItems() {
+            const menuContainer = document.getElementById('menuContainer');
+            const menuList = getMenuList();
+            menuContainer.innerHTML = ''; 
+
+            menuList.forEach(item => {
+                const stockInfo = item.stock > 0
+                    ? `<span class="badge bg-success">Stok: ${item.stock}</span>`
+                    : `<span class="badge bg-danger">Stok Habis</span>`;
+
+                const buttonState = item.stock > 0 ? '' : 'disabled';
+                
+                const card = `
+                <div class="col element-item ${item.category}">
+                    <div class="menu-card h-100">
+                        <img src="${item.image}" alt="${item.name}" onerror="this.src='placeholder.jpg';">
+                        <div class="menu-info d-flex flex-column">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h3 class="h5 mb-0">${item.name}</h3>
+                                    ${stockInfo}
+                                </div>
+                                <p class="small text-muted">${item.desc}</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                                <span class="menu-price fw-bold">Rp${item.price.toLocaleString('id-ID')}</span>
+                                <button class="btn btn-sm btn-primary btn-add-to-cart" data-item="${item.name}" ${buttonState} style="background-color: var(--primary-color); border:none;">
+                                    <i class="fas fa-cart-plus"></i> Pesan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                menuContainer.insertAdjacentHTML('beforeend', card);
+            });
+            
+            // Re-inisialisasi Isotope setelah gambar dimuat
+            imagesLoaded(menuContainer, function() {
+                window.iso = new Isotope(menuContainer, {
+                    itemSelector: '.element-item',
+                    layoutMode: 'fitRows'
+                });
+            });
+            
+            // Pasang event listener ke tombol "Pesan" yang baru dibuat
+            attachOrderButtonListeners();
+        }
+
+       
+window.addEventListener('storage', function(event) {
+    // Cek apakah data yang berubah adalah 'menuList'
+    if (event.key === 'menuList') {
+        console.log('Stok diupdate dari tab lain! Merender ulang menu...');
+        // Jika ya, panggil fungsi renderMenuItems untuk me-refresh tampilan
+        renderMenuItems();
+    }
 });
 
-// Script untuk filter menu dari dropdown navbar
-document.querySelectorAll('.dropdown-item[data-filter]').forEach(function(item) {
-    item.addEventListener('click', function(e) {
-        e.preventDefault();
-        var filterValue = this.getAttribute('data-filter');
-        // Pastikan Isotope sudah diinisialisasi
-        if (window.iso) {
-            window.iso.arrange({ filter: filterValue });
-            setTimeout(function() {
-                // Scroll ke item pertama yang tampil setelah filter
-                var firstVisible = document.querySelector('.element-item' + filterValue + '[style*="display: block"], .element-item' + filterValue + ':not([style])');
-                if (firstVisible) {
-                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Fungsi untuk mengatur tombol di navbar berdasarkan status login
+        function setupNavbarAuth() {
+            const navAuthContent = document.getElementById('navAuthContent');
+            const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+            if (user && user.username) {
+                if (user.role === 'admin') {
+                    navAuthContent.innerHTML = `<a href="admin.html" class="btn btn-warning px-3 py-2"><i class="fas fa-cog me-1"></i> Kelola Data</a>`;
                 } else {
-                    document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+                     navAuthContent.innerHTML = `<span class="navbar-text me-3">Halo, ${user.username}!</span> <button onclick="logout()" class="btn btn-outline-danger btn-sm">Logout</button>`;
                 }
-            }, 300);
+            } else {
+                navAuthContent.innerHTML = `<a href="login.html" class="btn btn-primary px-3 py-2" style="color:white;"><i class="fas fa-sign-in-alt me-1"></i> Login</a>`;
+            }
         }
-        // Update tombol kategori aktif
-        document.querySelectorAll('.category-buttons .btn').forEach(function(btn) {
-            btn.classList.remove('active');
-        });
-        var matchingButton = document.querySelector('.category-buttons .btn[data-filter="' + filterValue + '"]');
-        if (matchingButton) {
-            matchingButton.classList.add('active');
-        }
-    });
-});
 
-// Script untuk tombol navbar "Menu" agar filter ke Semua Menu
-document.querySelectorAll('.navbar .nav-link[href="#menu"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-        // Reset filter ke Semua Menu
-        if (window.iso) {
-            window.iso.arrange({ filter: '*' });
+        // Fungsi yang memasang listener ke tombol pesan
+        function attachOrderButtonListeners() {
+            document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (!isLoggedIn()) {
+                        var loginModal = new bootstrap.Modal(document.getElementById('loginRequiredModal'));
+                        loginModal.show();
+                        return;
+                    }
+                    
+                    selectedMenuName = this.getAttribute('data-item') || 'Menu';
+                    document.getElementById('qtyMenuName').textContent = selectedMenuName;
+                    document.getElementById('qtyInput').value = 1;
+                    var qtyModal = new bootstrap.Modal(document.getElementById('orderQtyModal'));
+                    qtyModal.show();
+                });
+            });
         }
-        // Set tombol kategori "Semua Menu" aktif
-        document.querySelectorAll('.category-buttons .btn').forEach(function(btn) {
-            btn.classList.remove('active');
-        });
-        var allBtn = document.querySelector('.category-buttons .btn[data-filter="*"]');
-        if (allBtn) {
-            allBtn.classList.add('active');
-        }
-        // Scroll ke section menu
-        var menuSection = document.getElementById('menu');
-        if (menuSection) {
-            menuSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
+        
+        // Jalankan fungsi utama saat halaman siap
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMenuItems();
+            setupNavbarAuth();
 
-// Script agar klik navbar "Menu" sama dengan klik tombol "Semua Menu"
-document.querySelectorAll('.navbar .nav-link[href="#menu"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-        // Cegah scroll default agar smooth scroll dari tombol
-        e.preventDefault();
-        var allBtn = document.querySelector('.category-buttons .btn[data-filter="*"]');
-        if (allBtn) {
-            allBtn.click();
-        }
-        // Scroll ke section menu (jaga-jaga jika filter tidak scroll)
-        var menuSection = document.getElementById('menu');
-        if (menuSection) {
-            menuSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
-// Cek status login dari localStorage/sessionStorage atau query string
-function isLoggedIn() {
-    if (window.currentUser) return true;
-    if (localStorage.getItem('currentUser')) return true;
-    if (sessionStorage.getItem('currentUser')) return true;
-    if (window.location.search.includes('logged=true')) return true;
-    return false;
-}
-
-let selectedMenuName = '';
-
-// Handler tombol "Pesan Sekarang"
-document.querySelectorAll('.btn-add-to-cart').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (!isLoggedIn()) {
-            // Tampilkan modal login dulu
-            var loginModal = new bootstrap.Modal(document.getElementById('loginRequiredModal'));
-            loginModal.show();
-            return;
-        }
-        // Jika sudah login, tampilkan modal input jumlah pesanan
-        selectedMenuName = this.getAttribute('data-item') || 'Menu';
-        document.getElementById('qtyMenuName').textContent = selectedMenuName;
-        document.getElementById('qtyInput').value = 1;
-        var qtyModal = new bootstrap.Modal(document.getElementById('orderQtyModal'));
-        qtyModal.show();
-
-        // Reset and setup plus/minus handler every time modal is shown
-        setTimeout(function() {
-            var qtyInput = document.getElementById('qtyInput');
-            var btnMinus = document.getElementById('btnQtyMinus');
-            var btnPlus = document.getElementById('btnQtyPlus');
+            // Handler untuk tombol +/- di modal kuantitas (dari kode "sempurna" Anda)
+            const qtyInput = document.getElementById('qtyInput');
+            const btnMinus = document.getElementById('btnQtyMinus');
+            const btnPlus = document.getElementById('btnQtyPlus');
             if (btnMinus && btnPlus && qtyInput) {
                 btnMinus.onclick = function() {
                     let val = parseInt(qtyInput.value, 10) || 1;
@@ -456,68 +275,77 @@ document.querySelectorAll('.btn-add-to-cart').forEach(function(btn) {
                     qtyInput.value = val + 1;
                 };
             }
-        }, 200);
-    });
-});
 
-// Handler submit jumlah pesanan
+            // Handler untuk form submit kuantitas (dari kode "sempurna" Anda)
+            document.getElementById('orderQtyForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (!isLoggedIn()) return;
+
+                // ... (kode di dalam index.html)
+
 document.getElementById('orderQtyForm').addEventListener('submit', function(e) {
     e.preventDefault();
     if (!isLoggedIn()) return;
-    var qty = document.getElementById('qtyInput').value;
-    var qtyModalEl = document.getElementById('orderQtyModal');
-    var qtyModal = bootstrap.Modal.getInstance(qtyModalEl);
+    
+    const qty = parseInt(document.getElementById('qtyInput').value);
+    const qtyModalEl = document.getElementById('orderQtyModal');
+    const qtyModal = bootstrap.Modal.getInstance(qtyModalEl);
     qtyModal.hide();
 
+    // =================================================================
+    // ▼▼▼ TAMBAHKAN BLOK KODE BARU ANDA DI SINI ▼▼▼
+    // =================================================================
+    let menuList = getMenuList();
+    const itemIndex = menuList.findIndex(item => item.name === selectedMenuName);
+
+    if (itemIndex > -1) {
+        menuList[itemIndex].stock = Math.max(0, menuList[itemIndex].stock - qty);
+        localStorage.setItem('menuList', JSON.stringify(menuList));
+        renderMenuItems(); // <-- Ini akan me-refresh tampilan menu secara instan
+    }
+
+    // Logika untuk menampilkan modal sukses (ini adalah kode Anda yang sudah ada)
     qtyModalEl.addEventListener('hidden.bs.modal', function handler() {
-        // Render modal sukses ke dalam container
-        document.getElementById('orderSuccessModalContainer').innerHTML = `
-<div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-success text-white">
-        <h5 class="modal-title" id="orderSuccessModalLabel"><i class="fas fa-check-circle me-2"></i>Pesanan Berhasil!</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
-      </div>
-      <div class="modal-body text-center">
-        <div style="font-size:2.5rem;color:#28a745;">
-          <i class="fas fa-utensils"></i>
-        </div>
-        <div class="mt-3 mb-2">
-          <span id="successMenuName" class="fw-bold"></span>
-        </div>
-        <div class="mb-2">
-          <span id="successMenuQty"></span>
-        </div>
-        <div class="mb-3">
-          Terima kasih telah memesan di <b>FoodOrder</b>! Pesanan Anda akan segera kami proses dan dikirim ke alamat tujuan.
-        </div>
-        <div class="alert alert-info py-2">
-          Silakan cek keranjang atau hubungi admin jika ada kendala.
-        </div>
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
-</div>
-        `;
-        document.getElementById('successMenuName').textContent = 'Anda memesan: ' + selectedMenuName;
-        document.getElementById('successMenuQty').textContent = 'Jumlah: ' + qty;
-        var successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
-        successModal.show();
-        qtyModalEl.removeEventListener('hidden.bs.modal', handler);
-    });
+        // ... sisa kode untuk menampilkan modal sukses tidak perlu diubah
+    }, { once: true });
 });
 
-// Hapus modal sukses dari HTML jika user belum login
-if (!isLoggedIn()) {
-    var orderSuccessModal = document.getElementById('orderSuccessModal');
-    if (orderSuccessModal) {
-        orderSuccessModal.parentNode.removeChild(orderSuccessModal);
-    }
-}
+                var qty = document.getElementById('qtyInput').value;
+                var qtyModalEl = document.getElementById('orderQtyModal');
+                var qtyModal = bootstrap.Modal.getInstance(qtyModalEl);
+                qtyModal.hide();
+
+                qtyModalEl.addEventListener('hidden.bs.modal', function handler() {
+                    document.getElementById('orderSuccessModalContainer').innerHTML = `
+                    <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-success text-white">
+                                    <h5 class="modal-title" id="orderSuccessModalLabel"><i class="fas fa-check-circle me-2"></i>Pesanan Berhasil!</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <div style="font-size:2.5rem;color:#28a745;"><i class="fas fa-utensils"></i></div>
+                                    <div class="mt-3 mb-2"><span id="successMenuName" class="fw-bold"></span></div>
+                                    <div class="mb-2"><span id="successMenuQty"></span></div>
+                                    <div class="mb-3">Terima kasih telah memesan di <b>FoodOrder</b>! Pesanan Anda akan segera kami proses.</div>
+                                    <div class="alert alert-info py-2">Silakan hubungi admin jika ada kendala.</div>
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Tutup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                    document.getElementById('successMenuName').textContent = 'Anda memesan: ' + selectedMenuName;
+                    document.getElementById('successMenuQty').textContent = 'Jumlah: ' + qty;
+                    var successModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+                    successModal.show();
+                    qtyModalEl.removeEventListener('hidden.bs.modal', handler);
+                }, { once: true }); // Opsi { once: true } agar handler otomatis dihapus setelah sekali jalan
+            });
+        });
     </script>
 </body>
 </html>
+
